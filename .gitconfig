@@ -1,0 +1,58 @@
+[user]
+	name = Michael Eaton 
+	email = mjeaton@gmail.com
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[merge]
+	tool = p4merge
+  keepBackup = false
+[mergetool "p4merge"]
+	cmd = "p4merge.exe $BASE $LOCAL $REMOTE $MERGED"
+  keepTemporaries = false
+  trustExitCode = false
+  keepBackup = false
+[diff]
+  tool = p4diff
+[difftool "p4diff"]
+  prompt = false
+	cmd = "p4merge.exe $LOCAL $REMOTE"
+[core]
+  autocrlf = false
+  legacyheaders = false
+  editor = gvim --nofork '%*'
+[gui]
+  fontdiff = -family Monaco -size 12 -weight normal -slant roman -underline 0 -overstrike 0
+[repack]
+  usedeltabaseoffset = true
+[alias]
+  ci = commit
+  co = checkout
+  st = status
+  br = branch
+  ch = cherry -v origin
+  mine = log --author=Tim
+  spull = !git svn fetch && git svn rebase
+  spush = !git svn dcommit
+  hist = log -10 --pretty=format:\"%Cred%h%Creset %ad %Cgreen(%cr)%Creset | %s%d %C(yellow)[%an]%Creset\" --graph --date=short
+  hist2 = log --pretty=format:\"%Cred%h%Creset %ad | %s%d %C(bold yellow)[%an]%Creset %Cgreen(%cr)%Creset\" --graph --date=short
+  type = cat-file -t
+  dump = cat-file -p
+  gpom = git pull origin master
+[github]
+  user = mjeaton
+  token = d7e843fc86f68c4dddba4d0342203078
