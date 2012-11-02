@@ -1,0 +1,6 @@
+[ui]
+username = Michael Eaton <mjeaton@gmail.com>
+verbose = True
+
+[alias]
+hs = hg status
