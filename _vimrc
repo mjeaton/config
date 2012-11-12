@@ -7,6 +7,7 @@ map! ^O {^M}^[O^T
 
 :noremap <space> za
 
+set autochdir
 set backup 
 set autowrite
 set shell=cmd.exe
