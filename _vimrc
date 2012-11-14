@@ -1,6 +1,9 @@
-map ,v :e c:\users\mjeaton\_vimrc<CR>
-map ,g :e c:\users\mjeaton\_gvimrc<CR>
-map ,s :so c:\users\mjeaton\_vimrc<CR>
+set nocompatible
+let mapleader=","
+
+map <leader>v :e $MYVIMRC<CR>
+map <leader>g :e c:\users\mjeaton\_gvimrc<CR>
+map <leader>s :so c:\users\mjeaton\_vimrc<CR>
 
 set ai sw=4
 map! ^O {^M}^[O^T
