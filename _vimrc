@@ -2,8 +2,7 @@ set nocompatible
 let mapleader=","
 
 map <leader>v :e $MYVIMRC<CR>
-map <leader>g :e c:\users\mjeaton\_gvimrc<CR>
-map <leader>s :so c:\users\mjeaton\_vimrc<CR>
+map <leader>s :so $MYVIMRC<CR>
 
 set ai sw=4
 map! ^O {^M}^[O^T
@@ -11,7 +10,7 @@ map! ^O {^M}^[O^T
 :noremap <space> za
 
 set autochdir
-set backup 
+set nobackup 
 set autowrite
 set shell=cmd.exe
 set tags=./tags,tags
