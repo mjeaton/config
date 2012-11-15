@@ -48,6 +48,17 @@ iab cw Console.WriteLine);<esc>hi
 iab YPATHFILE <C-R>=expand("%:p")<cr>
 map <F1> :nohls<CR>
 
+function! RenameFile()
+  let old_name = expand('%')
+  let new_name = input('New file name: ', expand('%'))
+  if new_name != '' && new_name != old_name
+    exec ':saveas ' . new_name
+    exec ':silent !rm ' . old_name
+    redraw!
+  endif
+endfunction
+map <leader>mv :call RenameFile()<cr>
+
 " ===================================================================
 " ASCII tables - you may need them some day.  Save them to a file!
 " ===================================================================
