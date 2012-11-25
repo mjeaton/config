@@ -1,3 +1,6 @@
+call pathogen#infect()
+syntax on
+
 set nocompatible
 let mapleader=","
 
@@ -25,7 +28,6 @@ set cmdheight=2
 set laststatus=2
 set tildeop
 map Q gq
-syntax on
 set guioptions-=T
 
 set list
