@@ -1,6 +1,8 @@
 call pathogen#infect()
 syntax on
 
+:cd $USERPROFILE/projects
+
 set nocompatible
 let mapleader=","
 
@@ -11,6 +13,8 @@ set ai sw=4
 map! ^O {^M}^[O^T
 
 :noremap <space> za
+
+autocmd VimEnter * NERDTree | wincmd p
 
 set autochdir
 set nobackup 
