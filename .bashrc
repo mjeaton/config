@@ -18,6 +18,8 @@ alias gdc='git diff --cached'
 alias go='git co'
 alias gl="git log -10 --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias glb='git branch -a'
+alias gfu='git fetch upstream'
+alias gmu='git merge upstream/master'
 
 SSH_ENV="$HOME/.ssh/environment"
 
