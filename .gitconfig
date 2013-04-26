@@ -32,7 +32,7 @@
   prompt = false
 	cmd = "p4merge.exe $LOCAL $REMOTE"
 [core]
-  autocrlf = false
+	autocrlf = true
   legacyheaders = false
   editor = gvim --nofork '%*'
 [gui]
@@ -45,7 +45,7 @@
   st = status
   br = branch
   ch = cherry -v origin
-  mine = log --author=Tim
+  mine = log --author=mjeaton
   spull = !git svn fetch && git svn rebase
   spush = !git svn dcommit
   hist = log -10 --pretty=format:\"%Cred%h%Creset %ad %Cgreen(%cr)%Creset | %s%d %C(yellow)[%an]%Creset\" --graph --date=short
@@ -56,3 +56,5 @@
 [github]
   user = mjeaton
   token = d7e843fc86f68c4dddba4d0342203078
+[push]
+	default = simple
