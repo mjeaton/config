@@ -48,7 +48,12 @@ colorscheme desert
 
 set splitbelow
 set hls
-set number
+
+:au FocusLost * :set number
+:au FocusGained * :set relativenumber
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
+
 
 iab cw Console.WriteLine);<esc>hi
 iab YPATHFILE <C-R>=expand("%:p")<cr>
