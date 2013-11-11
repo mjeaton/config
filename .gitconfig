@@ -55,6 +55,5 @@
   gpom = git pull origin master
 [github]
   user = mjeaton
-  token = d7e843fc86f68c4dddba4d0342203078
 [push]
 	default = simple
