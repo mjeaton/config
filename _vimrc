@@ -1,7 +1,9 @@
-call pathogen#infect()
+execute pathogen#infect()
 syntax on
+set encoding=UTF8
+set guifont=DroidSansMono\ Nerd\ Font:h11
 
-:cd $USERPROFILE/projects
+:cd e:/dev
 
 set nocompatible
 let mapleader=","
@@ -15,6 +17,8 @@ map! ^O {^M}^[O^T
 :noremap <space> za
 
 autocmd VimEnter * NERDTree | wincmd p
+" Exit Vim if NERDTree is the only window remaining in the only tab.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 set autochdir
 set nobackup 
@@ -28,7 +32,7 @@ set ts=4
 set sw=4
 set ai
 set nowrap
-set cmdheight=2
+set cmdheight=1
 set laststatus=2
 set tildeop
 map Q gq
@@ -48,16 +52,19 @@ colorscheme desert
 
 set splitbelow
 set hls
+map <F1> :nohls<CR>
 
 :au FocusLost * :set number
-:au FocusGained * :set relativenumber
+:au FocusGained * :set number 
 autocmd InsertEnter * :set number
-autocmd InsertLeave * :set relativenumber
-
+autocmd InsertLeave * :set number
 
 iab cw Console.WriteLine);<esc>hi
 iab YPATHFILE <C-R>=expand("%:p")<cr>
-map <F1> :nohls<CR>
+
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
 
 function! RenameFile()
   let old_name = expand('%')
